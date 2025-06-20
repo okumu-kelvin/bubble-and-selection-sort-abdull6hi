@@ -1,14 +1,16 @@
 def bubble_sort(unsorted_list):
-    n = len(unsorted_list)
-        n = len(unsorted_list)
-        for i in range(n):
-            swapped = False
-            for j in range(0, n - i - 1):
-                if unsorted_list[j] > unsorted_list[j + 1]:
-                    unsorted_list[j], unsorted_list[j + 1] = unsorted_list[j + 1], unsorted_list[j]
-                    swapped = True
+    arr = list(unsorted_list)
+    n = len(arr)
 
-            if not swapped:
-                break
+    for i in range(n):
+        swapped = False 
 
-        return unsorted_list
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                swapped = True
+
+        if not swapped:
+            break  # No swaps = list already sorted
+
+    return arr
