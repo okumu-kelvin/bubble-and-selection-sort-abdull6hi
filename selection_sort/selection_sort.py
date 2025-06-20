@@ -1,8 +1,15 @@
 def selection_sort(arr):
-    for i in range(len(arr)):
-        min_idx = i
-        for j in range(i + 1, len(arr)):
-            if arr[j] < arr[min_idx]:
-                min_idx = j
-        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    arr = list(unsorted_list)  
+    n = len(arr)
+
+    for i in range(n):
+        min_index = i
+
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_index]:
+                min_index = j
+
+        if min_index != i:
+            arr[i], arr[min_index] = arr[min_index], arr[i]
+
     return arr
